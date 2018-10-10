@@ -1,0 +1,3 @@
+class GraffitiRequest < ApplicationRecord
+	
+end

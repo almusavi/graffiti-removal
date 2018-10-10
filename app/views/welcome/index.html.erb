@@ -1,0 +1,8 @@
+<div class="container" style="padding-top: 20px;">
+	<h3 style="padding-bottom: 20px;">Enter last name of alderman, month and year to show graffiti removal requests by ward and month in Chicago.</h3>
+<%= bootstrap_form_for GraffitiRequest.new do |f| %>
+  <%= f.text_field :last_name, :required => true, class: "form-control-lg", label: "Last Name of Alderman" %>
+  <%= f.month_field :month, :required => true, class: "form-control-lg", label: "Month and Year"%>
+  <%= f.submit "Submit" %>
+<% end %>
+</div>
