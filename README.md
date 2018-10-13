@@ -1,24 +1,12 @@
-# README
+# Graffiti-Removal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a coding challenge I did for a company that asks the user to input an alderman's last name, month and year and returns the aldermans full name, ward number, and graffiti removal requests for that month for the city of Chicago.
 
-Things you may want to cover:
+* It uses the City of Chicago's "Chicago Data Portal" Website hosted at https://data.cityofchicago.org/
 
-* Ruby version
+* Ruby version 5.1
 
-* System dependencies
+* I used bootstrap_form, dotenv-rails, soda-ruby, and breadcrumbs_on_rails gems to help create the page.
 
-* Configuration
+* It uses a postgresql database hosted with heroku at http://graffiti-removal.herokuapp.com/
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
