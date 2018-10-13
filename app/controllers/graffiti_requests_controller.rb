@@ -1,6 +1,8 @@
 
 class GraffitiRequestsController < ApplicationController
+	add_breadcrumb "home", :root_path
 	def create
+		add_breadcrumb "results"
 		@graffiti_request = GraffitiRequest.new(graffiti_request_params)
 		@graffiti_request.save
 		client = SODA::Client.new({:domain => "data.cityofchicago.org", :app_token => ENV["APP_TOKEN"]})
@@ -11,10 +13,12 @@ class GraffitiRequestsController < ApplicationController
 		last_name_results = last_name.get_last_names_results
 		@graffiti_removal_results = GraffitiRemovalResults.new(client: client, last_name_results: last_name_results, graffiti_request: @graffiti_request)
 		@results = @graffiti_removal_results.parse_last_name_results
-		render "index"
 	end
 
 	def show
+	end
+
+	def index
 	end
 
 
