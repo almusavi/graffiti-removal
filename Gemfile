@@ -37,6 +37,8 @@ gem "bootstrap_form", ">= 4.0.0.alpha1"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'soda-ruby', :require => 'soda'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

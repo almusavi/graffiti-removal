@@ -1,0 +1,31 @@
+<div class="container" style="padding-top: 20px;">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-4aw5{background-color:#f2f2f2;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-4aw5">Alderman</th>
+    <th class="tg-4aw5">Ward Number</th>
+    <th class="tg-4aw5">Month and Year</th>
+    <th class="tg-4aw5">Total Number of Requests</th>
+  </tr>
+  <% if @results != nil %>
+	  <% @results.each do |each_result| %> 
+
+	  <tr>
+	  	<% month_array = each_result["month_and_year"].split("-") %>
+	  	<% date = Date.new(month_array[0].to_i, month_array[1].to_i) %>
+	    <td class="tg-0lax"> <%= each_result["alderman_full_name"] %></td>
+	    <td class="tg-0lax"><%= each_result["ward_number"] %></td>
+	    <td class="tg-0lax"><%= date.strftime("%B %Y") %></td>
+	    <td class="tg-0lax"><%= each_result["total_number_of_requests"] %></td>
+	  </tr>
+	<% end %>
+<% end %>
+</table>
+</div>
+
